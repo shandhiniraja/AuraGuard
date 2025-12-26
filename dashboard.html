@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuraGuard – Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f7fbfc;
+      color:#1f2937;
+    }
+
+    /* Navbar */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 60px;
+      background:#ffffff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-weight:600;
+      font-size:18px;
+      color:#1f2937;
+    }
+
+    .logout{
+      background:#ef4444;
+      border:none;
+      padding:8px 18px;
+      border-radius:8px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* Dashboard */
+    .dashboard{
+      padding:50px 80px;
+    }
+
+    .dashboard h2{
+      margin-bottom:30px;
+    }
+
+    .cards{
+      display:flex;
+      gap:25px;
+      margin-bottom:40px;
+    }
+
+    .card{
+      background:#ffffff;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      width:33%;
+      text-align:center;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#2ea3ad;
+    }
+
+    .value{
+      font-size:28px;
+      font-weight:600;
+    }
+
+    .status-safe{color:green;}
+    .status-alert{color:red;}
+
+    /* Table */
+    table{
+      width:100%;
+      background:#ffffff;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    th,td{
+      padding:14px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    th{
+      background:#2ea3ad;
+      color:#fff;
+    }
+
+    tr:nth-child(even){background:#f1f5f9;}
+
+    @media(max-width:900px){
+      .cards{flex-direction:column;}
+      .card{width:100%;}
+      .dashboard{padding:40px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🛡 AuraGuard Dashboard</div>
+  <button class="logout" onclick="logout()">Logout</button>
+</header>
+
+<section class="dashboard">
+  <h2>Live Health Monitoring</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Heart Rate</h3>
+      <div class="value">78 bpm</div>
+    </div>
+
+    <div class="card">
+      <h3>Fall Detection</h3>
+      <div class="value status-safe">No Fall</div>
+    </div>
+
+    <div class="card">
+      <h3>Last Updated</h3>
+      <div class="value">10:30 AM</div>
+    </div>
+  </div>
+
+  <h2>Fall Detection History</h2>
+
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>16-03-2025</td>
+      <td>09:15 AM</td>
+      <td class="status-safe">Normal</td>
+    </tr>
+    <tr>
+      <td>15-03-2025</td>
+      <td>08:40 PM</td>
+      <td class="status-alert">Fall Detected</td>
+    </tr>
+  </table>
+</section>
+
+<script>
+  function logout(){
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
